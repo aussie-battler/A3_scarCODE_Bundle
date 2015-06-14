@@ -1,0 +1,19 @@
+class cfgFunctions
+{
+	class ScarCode
+	{
+		tag = "SC";
+		#include "ScarCode\cfgFunctions\fn_PSR.hpp"
+		#include "ScarCode\cfgFunctions\fn_PvE.hpp"
+		#include "ScarCode\cfgFunctions\fn_SRW.hpp"
+		#include "ScarCode\cfgFunctions\fn_SIM.hpp"
+		#include "ScarCode\cfgFunctions\fn_SCMP.hpp"
+		#include "ScarCode\cfgFunctions\fn_STM.hpp"
+	};
+};
+
+#include "ScarCode\GUI\Defines\global.hpp"
+#include "ScarCode\GUI\PSR.hpp"
+#include "ScarCode\GUI\SIM.hpp"
+#include "ScarCode\GUI\SCMP.hpp"
+#include "ScarCode\GUI\STM.hpp"

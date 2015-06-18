@@ -6,7 +6,7 @@
 */
 
 waitUntil { !isNull(findDisplay 46); !isNil"EPOCH_loadingScreenDone" };
-if !(player nearObjects["Debug_static_F", 20] isEqualTo[]) exitWith
+if (player nearObjects["Debug_static_F", 25] isEqualTo[]) then
 {
 	createDialog'SC_stmDiag';
 	setMousePosition [0.5, 0.5];

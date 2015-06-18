@@ -2,7 +2,7 @@
 	AUTHOR: IT07 (Original was made by BIS)
 
 	DESCRIPTION:
-	if installed in a mission file, any player joinging the mission
+	if installed in a mission file, any player joining the mission
 	will see credits on their screen as configured below. Players have the ability to skip credits by using the scroll menu action which is available until the credits are done showing.
 
 	PARAMS: None.
@@ -13,7 +13,7 @@
 
 ///////  CONFIGURATION  ///////
 _onScreenTime = 7; // Amount of seconds each credit should show. DEFAULT: 7
-_waitFor = 2; // Amount of seconds to wait before playing can see and move ingame. DEFAULT: 1
+_waitFor = 5; // Amount of seconds to wait before playing can see and move ingame. DEFAULT: 5
 // The line below is used for configuring what will be shown as credits. Be careful with the brackets!
 _credits =
 [
@@ -56,14 +56,12 @@ _creditsFnc =
 			[safezoneX + safezoneW - 1,0.8],	//DEFAULT: 0.5,0.35
 			[safezoneY + safezoneH - 1,1], 	//DEFAULT: 0.8,0.7
 			_onScreenTime,
-			0.5
-		] call BIS_fnc_dynamicText;
+			0.5] call BIS_fnc_dynamicText;
 		uiSleep 0.5;
 	} forEach _credits;
 };
 
 waitUntil { !isNull(findDisplay 46); !isNil"EPOCH_loadingScreenDone" };
-uiSleep 3;
 _playCredits = [_onScreenTime, _waitFor, _credits, _titleColor, _subColor] spawn _creditsFnc;
 _skip = player addAction ["Skip credits...",{terminate (_this select 3); player removeAction (_this select 2)}, _playCredits, -1, false, true];
 waitUntil { uiSleep 0.5; scriptDone _playCredits };

@@ -15,3 +15,13 @@ Small structural changes need to be applied to get them working for a different 
 
 #### Quick install instructions
 video: https://youtu.be/PoHb79iFORE
+**IMPORTANT INFO:**<br />
+- Any script listed above needs SC_scriptFramework_EPOCH to be installed.<br />
+- PSR and anti-PvP need initServer.sqf<br />
+- If using infiSTAR, make sure things in infiSTARsettings.txt match yours<br />
+- To enable/disable scripts, check `ScarCode\config.sqf`
+
+#### Config file locations
+`ScarCode\GUI\Configs\` <br />
+`ScarCode\config.sqf` <br />
+For server-side PSR config: `a3_scarcode_server\PSR\initServer_PSR.sqf` <br />

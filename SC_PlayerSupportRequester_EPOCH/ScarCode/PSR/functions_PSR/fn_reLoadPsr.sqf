@@ -19,7 +19,7 @@ if (not(isNull(findDisplay _dsp))) then
 	lbClear _lb;
 	_blnc = (findDisplay _dsp) displayCtrl 1006; // Crypto balance
 	_blnc ctrlSetText str(EPOCH_playerCrypto);
-	if (count SC_tasks > 0) then
+	if (count PSR_taskData > 0) then
 	{
 		_ctrl = (findDisplay _dsp) displayCtrl 2203;
 		_ctrl ctrlSetBackgroundColor [0,0,0,0.5];
@@ -27,24 +27,24 @@ if (not(isNull(findDisplay _dsp))) then
 		_ctrl ctrlSetBackgroundColor [0,0,0,0.5];
 		{
 			_i = _forEachIndex;
-			_s = _lb lbAdd format["#%1 from %2 - %3 at %4", _x select 5, _x select 0, _x select 2, _x select 1];
+			_s = _lb lbAdd format["#%1 from %2 - %3 at %4", _x select 4, name(_x select 0), _x select 2, _x select 1];
 			if not((_x select 3) isEqualTo "") then
 			{
 				_lb lbSetTooltip [_s,format["Comment: %1",_x select 3]];
 			};
-			if (typeName (_x select 6) isEqualTo "OBJECT") then
+			if (typeName (_x select 5) isEqualTo "OBJECT") then
 			{
 				_lb lbSetPicture [_i,"\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa"];
 				_lb lbSetPictureColor [_i,[0.02,1,0.431,0.8]];
 				_lb lbSetPictureColorSelected [_i,[1,0.784,0.016,1]];
 			};
-			_i = SC_tasks find _x;
+			_i = PSR_taskData find _x;
 			_lb lbSetValue [_s,_i];
-		} forEach SC_tasks;
+		} forEach PSR_taskData;
 	};
 
 	_ctrl = (findDisplay _dsp) displayCtrl 1100;
-	if ((count SC_tasks) isEqualTo 0 and not(ctrlText _ctrl isEqualTo "")) then
+	if ((count PSR_taskData) isEqualTo 0 and not(ctrlText _ctrl isEqualTo "")) then
 	{
 		_ctrl ctrlSetText "";
 		_cth = ctrlTextHeight _ctrl; // ctrlTxtHeight

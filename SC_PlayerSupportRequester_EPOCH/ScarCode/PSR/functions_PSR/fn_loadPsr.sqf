@@ -5,14 +5,7 @@
 _dsp = 298;
 if (not isNull(findDisplay _dsp)) then
 {
-	setMousePosition [0.5, 0.5];
 	disableSerialization;
-	if (isNil"SC_myToken") then
-	{
-		SC_psrTalkToServer = ["TOKEN", player, getPlayerUID player];
-		publicVariableServer "SC_psrTalkToServer";
-	};
-
 	// Fill location
 	_blnc = (findDisplay _dsp) displayCtrl 1006; // Crypto balance
 	_blnc ctrlSetText str(EPOCH_playerCrypto);
@@ -27,9 +20,9 @@ if (not isNull(findDisplay _dsp)) then
 	_c lbSetCurSel 0;
 
 	// Fil current requests if there
-	if not(isNil"SC_tasks") then
+	if not(isNil"PSR_taskData") then
 	{
-		if ((count SC_tasks) > 0) then
+		if ((count PSR_taskData) > 0) then
 		{
 			call SC_fnc_reLoadPsr;
 		};

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by IT07, v1.063, #Xypaga)
+// GUI EDITOR OUTPUT START (by IT07, v1.063, #Nypute)
 ////////////////////////////////////////////////////////
 
 class menuBg: IGUIBack
@@ -9,20 +9,20 @@ class menuBg: IGUIBack
 	y = 3 * GUI_GRID_H + GUI_GRID_Y;
 	w = 26 * GUI_GRID_W;
 	h = 5.5 * GUI_GRID_H;
-	colorBackground[] = {0,0,0,0.5};
+	colorBackground[] = {0,0,0,0.7};
 };
 class titleMain: RscText
 {
 	shadow = 0;
 
 	idc = 1000;
-	text = "P.S.R. Menu (Player Support Requester)"; //--- ToDo: Localize;
+	text = "P.S.R."; //--- ToDo: Localize;
 	x = 7 * GUI_GRID_W + GUI_GRID_X;
 	y = 2 * GUI_GRID_H + GUI_GRID_Y;
 	w = 26 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	colorText[] = {0,0,0,0.8};
-	colorBackground[] = {1,0.784,0.016,1};
+	colorBackground[] = {1,0.784,0.016,0.8};
 };
 class statusColor: IGUIBack
 {
@@ -47,7 +47,7 @@ class statusTxt: RscText
 };
 class comboRequestType: RscCombo
 {
-	onLBSelChanged = "(_this select 1) call SC_fnc_getSupportCost";
+	onLBSelChanged = "(_this select 1) call SC_fnc_getPsrCost";
 
 	idc = 2100;
 	x = 7.5 * GUI_GRID_W + GUI_GRID_X;
@@ -64,14 +64,14 @@ class titleRequestType: RscText
 	text = "What service do you require?"; //--- ToDo: Localize;
 	x = 7.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
-	w = 13 * GUI_GRID_W;
+	w = 14 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	colorText[] = {1,0.784,0.016,1};
 	colorBackground[] = {0,0,0,0.7};
 };
 class sendRequest: RscButton
 {
-	action = "call SC_fnc_sendSupportRequest";
+	action = "call SC_fnc_sendPsrRequest";
 
 	idc = 1600;
 	text = "SEND REQUEST"; //--- ToDo: Localize;
@@ -156,7 +156,7 @@ class bgRequestDetailsFrame: IGUIBack
 	x = 7 * GUI_GRID_W + GUI_GRID_X;
 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
 	w = 26 * GUI_GRID_W;
-	h = 5 * GUI_GRID_H;
+	h = 7 * GUI_GRID_H;
 };
 class bgRequestDescription: IGUIBack
 {
@@ -172,7 +172,7 @@ class grpRequestDetails: RscControlsGroup
 	x = 7.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 25 * GUI_GRID_W;
-	h = 4 * GUI_GRID_H;
+	h = 6 * GUI_GRID_H;
 	class controls
 	{
 		class strTxtRequestData: RscStructuredText
@@ -187,8 +187,8 @@ class grpRequestDetails: RscControlsGroup
 };
 class lbTasks: RscListbox
 {
-	onLBSelChanged	= _this call SC_fnc_showRequestData;
-	onLBDblClick = _this call SC_fnc_takeSupportRequest;
+	onLBSelChanged	= _this call SC_fnc_getPsrData;
+	onLBDblClick = _this call SC_fnc_handlePsrTask;
 
 	idc = 1500;
 	x = 7.5 * GUI_GRID_W + GUI_GRID_X;

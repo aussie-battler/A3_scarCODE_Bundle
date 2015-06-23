@@ -12,19 +12,19 @@
 */
 
 private["_cfg","_v","_r"];
-_r = [];
+_r = []; // Result ARRAY
 {
 	_cfg = (missionConfigFile >> "psrConfig" >> "Settings" >> _x);
-	switch(true) do
+	call
 	{
-		case (isNumber _cfg): {_v = getNumber _cfg};
-		case (isText _cfg): {_v = getText _cfg};
-		case (isArray _cfg): {_v = getArray _cfg};
-		default {_v = nil};
+		if (isNumber _cfg) exitWith { _v = getNumber _cfg };
+		if (isText _cfg) exitWith { _v = getText _cfg };
+		if (isArray _cfg) exitWith { _v = getArray _cfg };
+		_v = nil; // Value
 	};
 	_r pushBack _v;
 } forEach _this;
 
-if(isNil "_r") then { _r = "No result"; };
+if(isNil "_v") then { _r = "No result"; };
 
 _r

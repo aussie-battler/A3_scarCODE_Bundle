@@ -1,4 +1,4 @@
-#include "Configs\cfg_PSR.hpp"
+#include "config_PSR.hpp"
 
 class cfgNotifications
 {
@@ -87,6 +87,6 @@ class SC_psrDiag
 	movingEnable = 1;
 	class controls
 	{
-		#include "Resources\Rsc_PSR.hpp"
+		#include "rsc_PSR.hpp"
 	};
 };

@@ -23,9 +23,9 @@ video: <br />
 
 #### Config file locations
 **PSR:** `scarCODE\PSR\config_PSR.hpp` and `a3_scarCODE_PSR\putUIDsInHere.sqf` <br />
-**PVE** `scarCODE\PVE\fn_initPVE.sqf` <br />
-**SCMP** `scarCODE\SCMP\config_SCMP.hpp` <br />
-**SIM** `scarCODE\SIM\config_SIM.hpp` <br />
-**SRW** `scarCODE\SRW\config.sqf` <br />
-**STM** `scarCODE\STM\config_STM` <br />
+**PVE:** `scarCODE\PVE\fn_initPVE.sqf` <br />
+**SCMP:** `scarCODE\SCMP\config_SCMP.hpp` <br />
+**SIM:** `scarCODE\SIM\config_SIM.hpp` <br />
+**SRW:** `scarCODE\SRW\config.sqf` <br />
+**STM:** `scarCODE\STM\config_STM` <br />
 *Also do not forget to read the comments in the example description.ext as it describes vital info on getting this all to work*

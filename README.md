@@ -10,6 +10,7 @@ Small structural changes need to be applied to get them working for a different 
 - Server Restart Warnings (S.R.W.) <br />
 - Server Info Menu (S.I.M.) <br />
 - Server Intro Credits (introCredits) <br />
+- Server Intro Camera (introCam) <br />
 - Spawn Teleport Menu (S.T.M.)<br />
 
 #### Quick install instructions

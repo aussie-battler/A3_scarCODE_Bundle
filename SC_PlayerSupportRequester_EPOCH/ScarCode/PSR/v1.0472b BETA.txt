@@ -1,1 +1,0 @@
-The name of this file presents the currently installed version of PSR.

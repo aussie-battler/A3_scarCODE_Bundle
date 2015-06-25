@@ -20,6 +20,9 @@ Small structural changes need to be applied to get them working for a different 
 - PSR script needs *a3_scarCODE_PSR* in *@epochhive\addons* <br />
 **Make sure to repack the contents of the server-side folder into a pbo named exactly the same as the folder they came in**
 
+#### Additional info
+- If you want to use PvE/Anti-PvP script, you will need to place onPlayerKilled.sqf in the root of your missionfile.<br />
+
 #### Config file locations
 **PSR:** `scarCODE\PSR\config_PSR.hpp` and `a3_scarCODE_PSR\putUIDsInHere.sqf` <br />
 **PVE:** `scarCODE\PVE\fn_initPVE.sqf` <br />
@@ -28,3 +31,7 @@ Small structural changes need to be applied to get them working for a different 
 **SRW:** `scarCODE\SRW\config.sqf` <br />
 **STM:** `scarCODE\STM\config_STM` <br />
 **Also do not forget to read the comments in the example description.ext as it describes vital info on getting this all to work**
+
+#### BattlEye Filters
+I recommend getting a good antiHack like http://infistar.de that one and remove the scripts.txt from your BattlEye filters.<br />
+If you do not want that, check the files inside the *BEfilters* folder.

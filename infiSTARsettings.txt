@@ -2,6 +2,7 @@ _UNC = false;
 _CAP = false;
 _OAP = false;
 _OAO = false;
+/*  custom _EHF Function */ _customFiredEventhandler = {if(SC_PvE)then{if (isPlayer cursorTarget)then {deleteVehicle(_this select 6)};}};		/* this needs to be CODE */
 
 /* 277: S.C.M.P. menu by IT07 */
 _allowedDialogs pushBack 277;

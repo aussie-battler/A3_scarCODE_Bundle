@@ -15,7 +15,8 @@ Small structural changes need to be applied to get them working for a different 
 
 #### Quick install instructions
 video: <br />
-- If you install anyting that uses a scrollmenu and you have infiSTAR, make sure things in infiSTARsettings.txt match yours <br />
+- if you install anyting that uses a scrollmenu and you have infiSTAR, make sure things in infiSTARsettings.txt match yours <br />
+- any scarCODE menu needs the global.hpp file included in description.ext. Check the description.ext example in this repository to see how to do so.
 - PVE/anti-PVP script needs a3_scarCODE_PVE in @epochhive\addons <br />
 - PSR script needs a3_scarCODE_PSR in @epochhive\addons <br />
 *Make sure to repack the contents of the server-side folder into a pbo named exactly the same as the folder they came in*

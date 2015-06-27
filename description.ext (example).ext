@@ -43,6 +43,7 @@ class CfgRemoteExecCommands {};
 #include "scarCODE\PSR\main_PSR.hpp" // Remove line if you do not have PSR
 #include "scarCODE\SIM\main_SIM.hpp" // Remove line if you do not have SIM
 #include "scarCODE\SCMP\main_SCMP.hpp" // Remove line if you do not have SCMP
+#include "scarCODE\SAR\main_SAR.hpp" // Remove line if you do not have SAR
 #include "scarCODE\STM\main_STM.hpp" // Remove line if you do not have STM
 //////////////////////////////////
 class cfgFunctions
@@ -105,6 +106,14 @@ class cfgFunctions
 		{
 			file = "scarCODE\PVE";
 			class initPVE { postInit = 1; };
+		};
+		class SAR // Simple Ammo Repack
+		{
+			file = "scarCODE\SAR\functions_SAR";
+			class sarPackMags {};
+			class sarGetData {};
+			class loadSAR {};
+			class initSAR { postInit = 1; };
 		};
 		class introCredits // Server Intro Credits
 		{

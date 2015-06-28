@@ -18,12 +18,8 @@ while {not(isNull(findDisplay 291))} do
 	_usedMags = 0;
 	_fullMags = 0;
 	_roundsInUsed = [];
-	_output ctrlSetText "Checking...";
+	_output ctrlSetText "INITIALIZING...";
 	{
-		if ((_x select 2) AND (_x select 0) isEqualTo _cn) exitWith
-		{
-			_cancel = true;
-		};
 		if ((_x select 0) isEqualTo _cn AND not((_x select 1) isEqualTo _max)) then
 		{
 			_usedMags = _usedMags + 1;
@@ -35,13 +31,9 @@ while {not(isNull(findDisplay 291))} do
 		};
 		uiSleep ((count magazinesAmmoFull player) / 300);
 	} forEach (magazinesAmmoFull player);
-	if not(isNil"_cancel") exitWith
-	{
-		_output ctrlSetText "Please remove mags from weapons";
-	};
 	if (_usedMags < 2) exitWith
 	{
-		_output ctrlSetText "Error! Need > 1 mag to merge...";
+		_output ctrlSetText "FAILED. NOT ENOUGH MAGS TO REPACK...";
 	};
 	player removeMagazines _cn;
 	uiSleep (1 + random 1);
@@ -60,6 +52,6 @@ while {not(isNull(findDisplay 291))} do
 	player addMagazine [_cn, _roundsFromUsed];
 	if (true) exitWith
 	{
-		_output ctrlSetText format["Done! Added %1 mags and 1 with %2 bullets", _magsToAdd, _roundsFromUsed];
+		_output ctrlSetText format["REPACKED! %1 MAGS FULL AND 1 WITH %2 ROUNDS", _magsToAdd, _roundsFromUsed];
 	};
 };

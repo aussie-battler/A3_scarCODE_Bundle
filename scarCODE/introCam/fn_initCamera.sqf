@@ -1,8 +1,7 @@
 [] spawn
 {
 	disableSerialization;
-	//waitUntil { !isNull(findDisplay 46); !isNil"EPOCH_loadingScreenDone" };
-	waitUntil { !isNull(findDisplay 46) };
+	waitUntil { uiSleep 0.1; !isNil"EPOCH_loadingScreenDone" };
 	if (player nearObjects["Debug_static_F", 25] isEqualTo[]) then // If player not in debug box
 	{
 
@@ -28,20 +27,8 @@
 		_cam camCommit 0;
 		_cam cameraEffect ["internal","BACK"];
 		_cam camSetTarget vehicle player;
-		_cam camSetRelPos [10, 20, 2];
+		_cam camSetRelPos [0, 0, 2];
 		_cam camCommit _duration;
-
-		_welcomeMessageOne = format["%1",format["%1", name player]];
-		_welcomeRulesTwo = format["PLAYING ON: [FP] GAMING PVE EPOCH UK SERVER"];
-		[
-			format[
-			"<t size='1.7' align='left' color='#FFFFFF'>%1</t><br /><t size='1' align='left' color='#C80000'>%2</t>",
-			_welcomeMessageOne, _welcomeRulesTwo
-			],
-			[safezoneX + safezoneW - 2.4,3], // Pos X
-			[safezoneY + safezoneH - 0.35,1], // Pos Y
-			_duration - 3, 2, 0
-		] spawn BIS_fnc_dynamicText;
 
 		[_duration, _cam, _fg] spawn
 		{
@@ -56,7 +43,5 @@
 			camDestroy _cam;
 			ppEffectDestroy _fg;
 		};
-
-		waitUntil { camCommitted _cam };
 	};
 };

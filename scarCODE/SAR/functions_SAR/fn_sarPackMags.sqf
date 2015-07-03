@@ -18,7 +18,9 @@ while {not(isNull(findDisplay 291))} do
 	_usedMags = 0;
 	_fullMags = 0;
 	_roundsInUsed = [];
-	_output ctrlSetText "INITIALIZING...";
+	_sentences = ["UNDERSTOOD! CHECKING...","WORKING...","I'M ON IT...","GIVE ME A MINUTE...","OK GOT IT. THINKING...","GIVE ME A SECOND...","YEP, I'LL DO THAT...","OK, WORKING ON IT...","PATIENCE PLEASE...","NOOOOO FATAL ERROR! (just kidding lol)"];
+	_randomSentence = _sentences select floor random count _sentences;
+	_output ctrlSetText _randomSentence;
 	{
 		if ((_x select 0) isEqualTo _cn AND not((_x select 1) isEqualTo _max)) then
 		{

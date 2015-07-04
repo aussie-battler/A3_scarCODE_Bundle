@@ -90,6 +90,7 @@ class cfgFunctions
 		{
 			file = "scarCODE\SCMP\functions_SCMP";
 			class getSmpSetting {};
+			class scmpOpenSel {};
 			class loadSCMP {};
 			class initSCMP { postInit = 1; };
 		};

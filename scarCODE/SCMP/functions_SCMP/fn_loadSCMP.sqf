@@ -13,6 +13,7 @@
 
 if not(isNull(findDisplay 277)) then
 {
+	private ["_d","_t"];
 	setMousePosition [0.5, 0.5];
 	disableSerialization;
 	_gim = ["installedMenus"] call SC_fnc_getSmpSetting; // GetInstalledMenus
@@ -21,21 +22,23 @@ if not(isNull(findDisplay 277)) then
 
 	// Fill the RscCombo
 	{
-		_d = false; // Define _d will make _d change to whatever given to it in switch
-		_t = false; // Same as above
-		switch (_x) do
+		call
 		{
-			case "SIM":
+			if (_x isEqualTo "SIM") exitWith
 			{
 				_d = "SC_simDiag";
 				_t = "Server Info Menu (S.I.M.)";
 			};
-			case "PSR":
+			if (_x isEqualTo "PSR") exitWith
 			{
 				_d = "SC_psrDiag";
 				_t = "Player Support Requester (P.S.R.)";
 			};
-			default { };
+			if (_x isEqualTo "SAR") exitWith
+			{
+				_d = "SC_sarDiag";
+				_t = "Simple Ammo Repacker (S.A.R.)";
+			};
 		};
 
 		_id = _cb lbAdd _t; // index = comboBox lbAdd text

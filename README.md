@@ -20,6 +20,12 @@ Small structural changes need to be applied to get them working for a different 
 - PSR script needs *a3_scarCODE_PSR* in *@epochhive\addons* <br />
 **Make sure to repack the contents of the server-side folder into a pbo named exactly the same as the folder they came in**
 
+#### Extended installation instructions
+I will try to keep this as short as possible because explaining how to install it (with the idea in mind that the reader does not already know how to) is very hard. It is like explaining to someone how to build a car but that someone does not know anything about cars. Allright here we go:<br />
+- None of these scripts use ExecVM to start them. It is all inside functions that use `postInit = 1` because that will make it so ArmA automatically executes the function upon game start.<br />
+- Check the `description.ext (example)` and look at how it has been written. It should give you more light on how to do all of this. Add the lines you need to your own description.ext to get it working of course :) <br />
+- `description.ext (example)` has all the code you need for your own description.ext to get the scripts to work you want to use. Make sure you only copy the code you want. More examples coming soon.
+
 #### Additional info
 - If you want to use PvE/Anti-PvP script, you will need to place onPlayerKilled.sqf in the root of your missionfile.<br />
 

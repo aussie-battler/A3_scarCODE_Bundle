@@ -39,5 +39,5 @@ I will try to keep this as short as possible because explaining how to install i
 **Also do not forget to read the comments in the example description.ext as it describes vital info on getting this all to work**
 
 #### BattlEye Filters
-I recommend getting a good antiHack like http://infistar.de that one and remove the scripts.txt from your BattlEye filters.<br />
-If you do not want that, check the files inside the *BEfilters* folder.
+I recommend getting a good antihack like http://infistar.de and then remove your scripts.txt.
+It improves performance and saves you a lot of frustration from all those kicks. Also, the really advanced "hackers" usually have a bypass or they use command that are covered by the rest of the filters.

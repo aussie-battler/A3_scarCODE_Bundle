@@ -1,6 +1,9 @@
 ##SCSB CHANGELOG
 
-#### 7th of July 2015: fixed cfgFunctions mixup
+#### 5th,July,2015: introCamera update
+**[CHANGED]** Font styling and position of text. Read and re-apply your custom config.sqf settings <br />
+
+#### 4th,July,2015: fixed cfgFunctions mixup
 SC_fnc_handleKilled was placed under introCredits instead of PVE.
 
 #### 7th of July 2015: SCMP v0.2

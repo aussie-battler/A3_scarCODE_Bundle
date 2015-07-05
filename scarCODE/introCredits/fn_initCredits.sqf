@@ -25,20 +25,14 @@
 		{
 			_selectTitle = _x select 0;
 			_selectSubs = _x select 1;
-			_all = format ["<t size='0.8' color='%1' align='right'>%2<br /></t>", _titleColor, _selectTitle];
-			_all = _all + format["<t size='1.2' color='%1' align='right'>", _subColor];
+			_all = format ["<t size='1.2' align='right' font='PuristaBold'>%2</t><br />", _titleColor, _selectTitle];
+			_all = _all + format["<t size='1' color='%1' align='right'>", _subColor];
 			{
-				_all = _all + format ["%1<br />", _x]
+				_all = _all + format ["%1<br />", _x];
 			} forEach _selectSubs;
 			_all = _all + "</t>";
 			_onScreenTime + (((count _selectSubs) - 1) * 0.5);
-			[
-				_all,
-				[safezoneX + safezoneW - 1,0.8],	//DEFAULT: 0.5,0.35
-				[safezoneY + safezoneH - 1,1], 	//DEFAULT: 0.8,0.7
-				_onScreenTime,
-				0.5
-			] call BIS_fnc_dynamicText;
+			[_all, [safezoneX + 0.1 * safezoneW,safezoneW * 0.88], [safezoneY + 0.7 * safezoneH, safezoneH * 0.3], _onScreenTime, 0, 0, 777] call BIS_fnc_dynamicText;
 			uiSleep 0.5;
 		} forEach _credits;
 	};

@@ -11,7 +11,8 @@ Small structural changes need to be applied to get them working for a different 
 - Server Info Menu (S.I.M.) <br />
 - Server Intro Credits (introCredits) <br />
 - Server Intro Camera (introCam) <br />
-- Spawn Teleport Menu (S.T.M.)<br />
+- Spawn Teleport Menu (S.T.M.) <br />
+- Simple Ammo Repacker (S.A.R) <br />
 
 #### Quick install instructions
 - if you install anyting that uses a scrollmenu and you have infiSTAR, make sure things in infiSTARsettings.txt match yours <br />

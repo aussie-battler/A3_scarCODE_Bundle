@@ -19,16 +19,11 @@ Small structural changes need to be applied to get them working for a different 
 - any scarCODE menu needs the `#include "scarCODE\global.hpp"` file included in description.ext. Check the description.ext example in this repository to see how to do so.
 - PVE/anti-PVP script needs *a3_scarCODE_PVE* in *@epochhive\addons* <br />
 - PSR script needs *a3_scarCODE_PSR* in *@epochhive\addons* <br />
-**Make sure to repack the contents of the server-side folder into a pbo named exactly the same as the folder they came in**
-
-#### Extended installation instructions
-I will try to keep this as short as possible because explaining how to install it (with the idea in mind that the reader does not already know how to) is very hard. It is like explaining to someone how to build a car but that someone does not know anything about cars. Allright here we go:<br />
-- None of these scripts use ExecVM to start them. It is all inside functions that use `postInit = 1` because that will make it so ArmA automatically executes the function upon game start.<br />
-- Check the `description.ext (example)` and look at how it has been written. It should give you more light on how to do all of this. Add the lines you need to your own description.ext to get it working of course :) <br />
-- `description.ext (example)` has all the code you need for your own description.ext to get the scripts to work you want to use. Make sure you only copy the code you want. More examples coming soon.
+**Make sure to repack the contents of the server-side folder into a pbo named exactly the same as the folder they came in** <br />
 
 #### Additional info
 - If you want to use PvE/Anti-PvP script, you will need to place onPlayerKilled.sqf in the root of your missionfile.<br />
+- Struggling with your description.ext? Checkout the provided examples to learn how to add only the stuff you want.
 
 #### Config file locations
 **PSR:** `scarCODE\PSR\config_PSR.hpp` and `a3_scarCODE_PSR\putUIDsInHere.sqf` <br />

@@ -1,3 +1,4 @@
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	disableSerialization;

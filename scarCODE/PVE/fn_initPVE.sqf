@@ -12,6 +12,7 @@ _PvEbyDefault = true; // Sets default mode to PvE if true
 _debug = false; // If true, will display data in hintSilent
 /////// End of config ///////
 
+if not(hasInterface) exitWith {};
 [_PvPZone, _PvEbyDefault, _debug] spawn
 {
 	_PvPZone = _this select 0;

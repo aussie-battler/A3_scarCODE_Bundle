@@ -11,6 +11,7 @@
 	this script concept was 1st released by IT07 for ArmA 2, then a guy called "Gr8" copy-pasted the concept and published it for ArmA 3 without permission.
 */
 
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	#include "config.sqf"

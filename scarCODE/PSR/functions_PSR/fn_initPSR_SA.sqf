@@ -5,6 +5,7 @@
 	init file for Player Support Requester menu (standalone mode)
 */
 
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	_gs = ["useScrollMenu","customControl"] call SC_fnc_getPsrSetting; // GetSettings

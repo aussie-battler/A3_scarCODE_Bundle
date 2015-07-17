@@ -5,6 +5,7 @@
 	init file for Spawn Teleport Menu
 */
 
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	waitUntil { uiSleep 0.5; !isNull(findDisplay 46); !isNil"EPOCH_loadingScreenDone" };

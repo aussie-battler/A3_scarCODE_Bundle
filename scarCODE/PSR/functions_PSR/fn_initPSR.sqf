@@ -5,6 +5,7 @@
 	init PSR menu
 */
 
+if not(hasInterface) exitWith {};
 "PSR_taskData" addPublicVariableEventHandler
 {
 	if not(isNull(findDisplay 298)) then

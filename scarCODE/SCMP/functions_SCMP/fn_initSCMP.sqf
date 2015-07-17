@@ -5,6 +5,7 @@
 	init file for ScarCode Menu Package script
 */
 
+if not(hasInterface) exitWith {};
 /////// Spawn live stats for SIM
 [] spawn SC_fnc_setLiveSimData; // Live uptime and players
 

@@ -11,6 +11,7 @@
 	why the **** would an init file return something? You moron :P
 */
 
+if not(hasInterface) exitWith {};
 [] spawn // Why? Because of { postInit = 1; };
 {
 	waitUntil { uiSleep 0.5; !isNull(findDisplay 46); !isNil"EPOCH_loadingScreenDone"; };

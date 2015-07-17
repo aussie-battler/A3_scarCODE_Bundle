@@ -5,6 +5,7 @@
 	init file for Server Info Menu (standalone mode)
 */
 
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	_gs = ["useScrollMenu","customControl"] call SC_fnc_getSimSetting; // GetSettings

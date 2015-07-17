@@ -3,6 +3,8 @@
 	Script name: Missionfile-based server restart warnings by IT07
 	Version: 02039_PATCH1
 */
+
+if not(hasInterface) exitWith {};
 [] spawn
 {
 	#include "config.sqf"

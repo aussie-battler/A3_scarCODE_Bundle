@@ -11,6 +11,7 @@ diag_log format["[scarCODE] GlobalMessenger %1 framework LOADING IN...", _versio
 diag_log "///////";
 uiNamespace setVariable ["SC_gmKeys", []];
 uiNamespace setVariable ["SC_gmKeysGivenTo", []];
+SC_gmKeysBusy = "set";
 
 [] spawn
 {

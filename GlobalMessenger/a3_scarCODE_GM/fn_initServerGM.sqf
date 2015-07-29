@@ -18,7 +18,7 @@ uiNamespace setVariable ["SC_gmKeysGivenTo", []];
     while {true} do
     {
         {
-            if (isPlayer _x AND (getPlayerUID _x) in _uids AND not(_x in (uiNamespace getVariable "SC_gmKeysGivenTo"))) then
+            if (isPlayer _x AND (side _x) isEqualTo "EAST" AND (getPlayerUID _x) in _uids AND not(_x in (uiNamespace getVariable "SC_gmKeysGivenTo"))) then
             {
                 _givenTo = uiNamespace getVariable "SC_gmKeysGivenTo";
                 _givenTo pushBack _x;
@@ -26,12 +26,38 @@ uiNamespace setVariable ["SC_gmKeysGivenTo", []];
                 SC_gmKey = call SC_fnc_gmGenKey;
                 (owner _x) publicVariableClient "SC_gmKey";
                 _keys = uiNamespace getVariable "SC_gmKeys";
+                waitUntil { uiSleep 0.5; not SC_gmKeysBusy };
+                SC_gmKeysBusy = true;
                 _keys pushBack [_x, getPlayerUID _x, SC_gmKey];
                 uiNamespace setVariable ["SC_gmKeys", _keys];
+                SC_gmKeysBusy = false;
                 diag_log format["[scarCODE] GlobalMessenger: KEY GIVEN TO %1 (%2|%3)", name _x, _x, getPlayerUID _x];
             };
         } forEach playableUnits;
-        uiSleep 2;
+        uiSleep 5;
+    };
+};
+
+[] spawn // Cleanup for the given keys
+{
+	while {true} do
+	{
+        waitUntil { uiSleep 0.5; not SC_gmKeysBusy }; // Make sure that were are not changing anything while keys are written into. Could "corrupt" it
+        SC_gmKeysBusy = true;
+        _toClean = [];
+        _givenKeys = uiNamespace getVariable "SC_gmKeys";
+        {
+            if not((_x select 0) in playableUnits) then
+            {
+                _toClean pushBack _x;
+            };
+        } forEach _givenKeys;
+        {
+            _index = _givenKeys find _x;
+            _givenKeys deleteAt _index;
+        } forEach _toClean;
+        SC_gmKeysBusy = false;
+        uiSleep (5*60); // Repeat again after 5 minutes
     };
 };
 

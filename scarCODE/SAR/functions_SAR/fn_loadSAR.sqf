@@ -18,10 +18,11 @@ _magTypes = [];
 {
 	_cn = _x select 0;
 	_max = getNumber (configFile >> "cfgMagazines" >> _cn >> "count");
+	_dspn = getText (configFile >> "cfgMagazines" >> _cn >> "displayname");
 	if (NOT((_x select 1) isEqualTo _max) AND (_x select 2)) exitWith
 	{
 		_note ctrlSetBackgroundColor [0.741,0.18,0.18,0.7];
-		_note ctrlSetText format["OOPS! a %1 still loaded in weapon", _dspn];
+		_note ctrlSetText format["Please remove %1 from weapon and try again.", _dspn];
 		lbClear _lbUnMerged;
 		_abort = true;
 	};

@@ -43,7 +43,7 @@ _i = false; // Input
 		};
 		case "ADDRESS":
 		{
-			_c = (findDisplay _d) displayCtrl 1017;
+			_c = (findDisplay _d) displayCtrl 1007;
 			_o = ["serverAddress"] call SC_fnc_getSimSetting;
 			_i = format["%1", _o select 0];
 		};

@@ -8,3 +8,4 @@
 if not(hasInterface) exitWith {};
 // Live uptime and players
 [] spawn SC_fnc_setLiveSimData;
+"DynamicBlur" ppEffectEnable true;

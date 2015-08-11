@@ -1,6 +1,5 @@
 /////// scarCODE hpp files ///////
 #include "scarCODE\global.hpp" // Needed if you use any menu from scarCODE
-#include "scarCODE\GM\main_GM.hpp"
 //////////////////////////////////
 class cfgFunctions
 {
@@ -17,6 +16,11 @@ class cfgFunctions
 			class initGM { postInit = 1; };
 		};
 	};
+};
+
+class RscTitles
+{
+	#include "scarCODE\GM\main_GM.hpp"
 };
 
 /////// IMPORTANT INSTALLATION INSTRUCTIONS ///////
